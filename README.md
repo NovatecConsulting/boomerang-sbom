@@ -1,5 +1,5 @@
 # boomerang-sbom
-Repository containing software bill of materials of akamai/boomerang releases.
+Repository containing software bill of materials of [boomerang](https://github.com/akamai/boomerang) releases.
 
 ## Create SBOM for a version of boomerang
 
