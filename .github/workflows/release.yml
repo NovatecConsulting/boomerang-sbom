@@ -21,19 +21,19 @@ jobs:
         run: |
           npm install grunt
           grunt clean build
-      - name: Prepare BOM generation
-        run: mkdir boomerang-boms
-      - name: Generate XML BOM
+      - name: Prepare SBOM generation
+        run: mkdir boomerang-sboms
+      - name: Generate XML SBOM
         uses: CycloneDX/gh-node-module-generatebom@master
         with:
-          output: ./boomerang-boms/boomerang-bom.xml
-      - name: Generate JSON BOM
+          output: ./boomerang-sboms/boomerang-sbom.xml
+      - name: Generate JSON SBOM
         uses: CycloneDX/gh-node-module-generatebom@master
         with:
-          output: ./boomerang-boms/boomerang-bom.json
+          output: ./boomerang-sboms/boomerang-sbom.json
           json: true
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.event.inputs.boomerang-version }}
-          files: boomerang-boms/*
+          files: boomerang-sboms/*
